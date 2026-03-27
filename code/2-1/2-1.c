@@ -1,17 +1,13 @@
 #include <stdio.h>
 
-void increment(int x) {
-	++x;
-	printf("%d\n", x);
-
-}
-
 int main() {
-	int x = 10;
+	const char* date = "2026-03-24";
+	char buffer[64];
+	int year, month, day;
 
-	printf("%d\n", x);
-	increment(x);
-	printf("%d\n", x);
+	sscanf(date, "%d-%d-%d", &year, &month, &day);
+	sprintf(buffer, "%d/%d/%d", day, month, year);
 
+	printf("%s\n", buffer);
 	return 0;
 }
